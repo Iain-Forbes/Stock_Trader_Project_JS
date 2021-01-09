@@ -26,9 +26,9 @@ MongoClient.connect('mongodb://localhost:27017')
   })
   .catch(console.err);
 
-//External API Fetch
+//External API Fetch access, localhost:3000/stock-data displays one entry for Microsoft
   app.get('/stock-data', (req, res ) =>{
-  const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=MSFT&apikey=demo`;
+  const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=MSFT&apikey=demo`; //placeholder 
 
   fetch(url)
     .then(jsonData => jsonData.json())
