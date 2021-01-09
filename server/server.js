@@ -9,6 +9,11 @@ app.use(cors());
 app.use(bodyParser.json()); 
 
 
+require("dotenv").config(); //API_KEY VAR in dotenv
+const fetch = require('node-fetch'); 
+
+
+
 const MongoClient = require('mongodb').MongoClient;
 const createRouter = require('./helpers/create_router.js');
 
@@ -20,6 +25,17 @@ MongoClient.connect('mongodb://localhost:27017')
     app.use('/api/stocks', stocksRouter);
   })
   .catch(console.err);
+
+//External API Fetch
+  app.get('/stock-data', (req, res ) =>{
+  const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=MSFT&apikey=demo`;
+
+  fetch(url)
+    .then(jsonData => jsonData.json())
+    .then(data => res.json(data));
+}, [])
+
+
 
 app.listen(3000, function () {
   console.log(`Listening on port ${ this.address().port }`);

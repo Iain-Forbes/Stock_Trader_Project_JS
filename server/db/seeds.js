@@ -1,4 +1,4 @@
-use stocks;
+use portfolio;
 db.dropDatabase();
 
 db.stocks.insertMany([
