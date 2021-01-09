@@ -1,6 +1,6 @@
 const baseURL = 'http://localhost:3000/api/stocks/'
 
-const StocksService = {
+const StockService = {
 
 getStocks() {
     return fetch(baseURL)
@@ -23,4 +23,4 @@ deleteStock(id) {
 }
 }
 
-export default StocksService;
+export default StockService;
