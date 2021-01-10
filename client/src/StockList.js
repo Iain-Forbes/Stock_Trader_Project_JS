@@ -1,3 +1,4 @@
+import Stock from './Stock.js';
 
 const StockList = (stocks) => {
     const stockPrices = stocks.map(stock => {

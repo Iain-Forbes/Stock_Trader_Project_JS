@@ -7,8 +7,8 @@ const Stock = (stock) => {
         // StockService.addStock(stock._id)
         // .then(() => {
         //     buyStock(stock._id);
-        })
-    }
+    //     })
+    // }
 
     return (
         <>
