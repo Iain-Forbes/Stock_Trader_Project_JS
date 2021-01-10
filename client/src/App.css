@@ -28,6 +28,58 @@
   color: #61dafb;
 }
 
+.form-data input, .form-data select {
+  width: 200px;
+  border: solid 3px gray;
+  font-size: 1em;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+.form-data textarea {
+  border: solid 3px gray;
+  font-size: 1em;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+.form-data input:hover, textarea:hover, select:hover {
+  border: solid 3px #7ac7c8;
+}
+.form-data input:focus, textarea:focus, select:focus {
+  border: solid 3px #1515cc;
+}
+.form-data input:focus {
+  width: 200px;
+}
+.form-data textarea:focus {
+  width: 500px;
+}
+
+.search-group{
+  display: inline-block;
+  background-color: powderblue;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 10px;
+  font-size: 1em;
+}
+
+.search-group input{
+  padding: 5px;
+  font-size: 1.2em;
+  border-radius: 3px;
+}
+
+.btn{
+  background-color: blue;
+  border-radius: 3px;
+  margin-left: 10px;
+  color: white;
+  font-size: 1.2em;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

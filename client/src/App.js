@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import {getStocks} from "./StockService";
 import StockList from "./StockList";
+import SearchForm from "./SearchForm";
 import './App.css';
 
 
@@ -18,6 +19,18 @@ function App() {
     const buyStock = stock.map(shares => shares);
     buyStock.push(stock);
     setStocks(buyStock);
+  }
+
+  const findStocks = (code) => {
+    // need to add code in here to use an id from the (full) stocks
+    // list so that it can be sent back 
+
+    /*
+    StockService.getSearchStock(code)
+    .then(set search result form data)
+    */
+    
+    // Need to add code in here - probably will need a useState for the search field too.
   }
 
   const updateStock = updatedStock => {
@@ -42,6 +55,7 @@ function App() {
   return (
     <div>
     <h1> Making millions from stocks and shares!</h1>
+    <SearchForm searchStock={findStocks} />
     {/* <StockForm addStock = {addStock} /> */}
     <StockList
     stocks={stocks}
