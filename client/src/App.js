@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import {getStocks} from "./StockService";
 import StockList from "./StockList";
+import SearchForm from "./SearchForm";
 import './App.css';
 
 
@@ -15,6 +16,12 @@ function App() {
   }, [])
 
   const addStock = (stock) => {
+    const buyStock = stock.map(shares => shares);
+    buyStock.push(stock);
+    setStocks(buyStock);
+  }
+
+  const findStock = (stock) => {
     const buyStock = stock.map(shares => shares);
     buyStock.push(stock);
     setStocks(buyStock);
@@ -42,6 +49,7 @@ function App() {
   return (
     <div>
     <h1> Making millions from stocks and shares!</h1>
+    <SearchForm searchStock={findStock} />
     {/* <StockForm addStock = {addStock} /> */}
     <StockList
     stocks={stocks}
