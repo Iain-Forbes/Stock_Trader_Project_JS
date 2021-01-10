@@ -1,21 +1,23 @@
-import StockService from "./StockService";
+import {addStock,} from "./StockService";
 
-const Stock = (stock) => {
+const Stock = ({stock, addStock}) => {
     console.log(stock);
 
-    //const handleAdd = () => {
-        // StockService.addStock(stock._id)
-        // .then(() => {
-        //     buyStock(stock._id);
+    //unsure what we need in here addStock/updateStock etc? 
+
+    // const handleAdd = () => {
+    //     addStock(stock._id)
+    //     .then(() => {
+    //         buyStock(stock._id);
     //     })
     // }
 
     return (
         <>
             <p>{stock.code}</p>
-            <p>{stock.name}</p>
-            <p>{stock.price}</p>
-            <p>{stock.change}</p>
+            <p>Name: {stock.name}</p>
+            <p>Price: {stock.price}</p>
+            <p>Change: {stock.change}</p>
             <button>Add to Portfolio</button>
         </>
     )

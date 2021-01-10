@@ -1,7 +1,7 @@
-import './App.css';
 import {useState, useEffect} from "react";
 import {getStocks} from "./StockService";
 import StockList from "./StockList";
+import './App.css';
 
 
 function App() {
@@ -40,14 +40,15 @@ function App() {
   };
 
   return (
-    <>
+    <div>
     <h1> Making millions from stocks and shares!</h1>
-    <StockForm addStock = {addStock} />
+    {/* <StockForm addStock = {addStock} /> */}
     <StockList
+    stocks={stocks}
     updateStock = {updateStock}
     deleteStock = {deleteStock}
     />
-    </>
+    </div>
   );
 }
 
