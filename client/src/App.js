@@ -37,12 +37,12 @@ function App() {
 
     removeStock.splice(stockToDelete, 1);
     setStocks(removeStock);
-
-  }
+  };
 
   return (
     <>
     <h1> Making millions from stocks and shares!</h1>
+    <StockForm addStock = {addStock} />
     <StockList
     updateStock = {updateStock}
     deleteStock = {deleteStock}
