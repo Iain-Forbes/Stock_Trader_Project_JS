@@ -1,5 +1,5 @@
 
-<form>
+{/* <form>
     <input
         type = ""
         id= ""
@@ -36,6 +36,6 @@
         onChange=
     />
 
-</form>
+</form> */}
 
 export default StockForm; 
