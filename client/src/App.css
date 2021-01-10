@@ -58,7 +58,7 @@
 
 .search-group{
   display: inline-block;
-  background-color: lightgray;
+  background-color: powderblue;
   border-radius: 5px;
   margin: 15px;
   padding: 10px;
@@ -72,7 +72,7 @@
 }
 
 .btn{
-  background-color: gray;
+  background-color: blue;
   border-radius: 3px;
   margin-left: 10px;
   color: white;
