@@ -1,15 +1,16 @@
 import Stock from './Stock.js';
 
-const StockList = (stocks) => {
-    const stockPrices = stocks.map(stock => {
-        return <Stock 
+const StockList = ({stocks}) => {
+    const stockInfo = stocks.map(stock => {
+        return (
+        <Stock 
         key = {stock._id}
-        stock ={stock} />
+        stock ={stock} />)
     });
 
     return (
         <>
-        {stockPrices}
+        {stockInfo}
         </>
     );
 }
