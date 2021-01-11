@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
-import {getPortfolio, getStockIndex} from "./Services/StockService";
+import {getPortfolio} from "./Services/PortfolioService";
+import {getStockIndex} from "./Services/StockService";
 import StockList from "./Portfolio/PortfolioList";
 import SearchForm from "./SearchForm";
 import './App.css';
@@ -9,21 +10,34 @@ function App() {
   const [stocks, setPortfolio] = useState([]);
   const [stockIndex, setStockIndex] = useState([]);
 
-  // useEffect(() => {
-  //   getPortfolio()
-  //   .then((allStocks) => {
-  //     setPortfolio(allStocks);
-  //   })  
-  // }, [])
+  useEffect(() => {
+    getPortfolio()
+    .then((allStocks) => {
+      setPortfolio(allStocks);
+    })  
+  }, [])
+
 
 
   useEffect(() => {
-    getStockIndex()
+    getStockIndex("ftse")
     .then((allStockIndex) => {
-      setStockIndex(allStockIndex);
+      // var result = Object.keys(allStockIndex).map((key) => [Number(key), allStockIndex[key]]);
+      
+      const stockNodes = allStockIndex.feed.entry.map((stock) => {
+        if (stock){
+            return (
+                stock.title['$t']
+            )};
+       
+            
+    });
+    console.log(stockNodes)
+      // setStockIndex(allStockIndex['feed']['entry']);
+      
     })
 
-    console.log(stockIndex);
+    
   }, [])
 
 
@@ -73,6 +87,7 @@ function App() {
     updateStock = {updateStock}
     deleteStock = {deleteStock}
     />
+    <p>{stockIndex}</p>
     </div>
   );
 }
