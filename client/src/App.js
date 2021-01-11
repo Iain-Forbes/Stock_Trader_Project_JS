@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import {getPortfolio} from "./Services/StockService";
+import {getPortfolio, getStockIndex} from "./Services/StockService";
 import StockList from "./Portfolio/PortfolioList";
 import SearchForm from "./SearchForm";
 import './App.css';
@@ -7,13 +7,25 @@ import './App.css';
 
 function App() {
   const [stocks, setPortfolio] = useState([]);
+  const [stockIndex, setStockIndex] = useState([]);
+
+  // useEffect(() => {
+  //   getPortfolio()
+  //   .then((allStocks) => {
+  //     setPortfolio(allStocks);
+  //   })  
+  // }, [])
+
 
   useEffect(() => {
-    getPortfolio()
-    .then((allStocks) => {
-      setPortfolio(allStocks);
-    })  
+    getStockIndex()
+    .then((allStockIndex) => {
+      setStockIndex(allStockIndex);
+    })
+
+    console.log(stockIndex);
   }, [])
+
 
   const addStock = (stock) => {
     const buyStock = stock.map(shares => shares);
