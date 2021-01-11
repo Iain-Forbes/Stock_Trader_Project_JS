@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
 const MongoClient = require('mongodb').MongoClient;
 const createRouter = require('./helpers/create_router.js')
-const createAVRouter = require('./helpers/AV_router.js');
+const createAVRouter = require('./helpers/stock_router.js');
 
 MongoClient.connect('mongodb://localhost:27017')
   .then((client) => {
@@ -21,7 +21,7 @@ MongoClient.connect('mongodb://localhost:27017')
   .catch(console.err);
 
   const AVrouter = createAVRouter();
-  app.use('/AV', AVrouter)
+  app.use('/api/stock', AVrouter)
 
 
 

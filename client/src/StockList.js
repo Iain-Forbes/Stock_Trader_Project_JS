@@ -8,6 +8,8 @@ const StockList = ({stocks}) => {
         stock ={stock} />)
     });
 
+
+
     return (
         <>
         {stockInfo}

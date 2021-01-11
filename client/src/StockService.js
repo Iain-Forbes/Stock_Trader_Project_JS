@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:3000/api/stocks/'
+const baseURL = 'http://localhost:3000/av/stock/'
 
 export const getStocks = () => {
     return fetch(baseURL)
