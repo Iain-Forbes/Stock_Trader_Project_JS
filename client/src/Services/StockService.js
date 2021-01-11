@@ -1,6 +1,6 @@
-const baseURL = 'http://localhost:3000/api/stocks/'
+const baseURL = 'http://localhost:3000/api/positions/'
 
-export const getStocks = () => {
+export const getPortfolio = () => {
     return fetch(baseURL)
     .then(res => res.json())
 }

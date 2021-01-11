@@ -1,6 +1,6 @@
-import {addStock,} from "./StockService";
+import {addStock} from "../Services/StockService";
 
-const Stock = ({stock, addStock}) => {
+const Portfolio = ({stock, addStock}) => {
     console.log(stock);
 
     //unsure what we need in here addStock/updateStock etc? 
@@ -24,4 +24,4 @@ const Stock = ({stock, addStock}) => {
 }
 
 
-export default Stock;
+export default Portfolio;

@@ -1,24 +1,24 @@
 import {useState, useEffect} from "react";
-import {getStocks} from "./StockService";
-import StockList from "./StockList";
+import {getPortfolio} from "./Services/StockService";
+import StockList from "./Portfolio/PortfolioList";
 import SearchForm from "./SearchForm";
 import './App.css';
 
 
 function App() {
-  const [stocks, setStocks] = useState([]);
+  const [stocks, setPortfolio] = useState([]);
 
   useEffect(() => {
-    getStocks()
+    getPortfolio()
     .then((allStocks) => {
-      setStocks(allStocks);
+      setPortfolio(allStocks);
     })  
   }, [])
 
   const addStock = (stock) => {
     const buyStock = stock.map(shares => shares);
     buyStock.push(stock);
-    setStocks(buyStock);
+    setPortfolio(buyStock);
   }
 
   const findStocks = (code) => {
@@ -40,7 +40,7 @@ function App() {
     const updatedStocksIndex = stocks.findIndex(stock => stock._id === updatedStock._id);
     const updatedStocks = [...stocks];
     updatedStocks[updatedStocksIndex] = updatedStocks;
-    setStocks(updatedStocks);
+    setPortfolio(updatedStocks);
   };
 
   const deleteStock = (id) => {
@@ -49,14 +49,13 @@ function App() {
     console.log(stockToDelete);
 
     removeStock.splice(stockToDelete, 1);
-    setStocks(removeStock);
+    setPortfolio(removeStock);
   };
 
   return (
     <div>
     <h1> Making millions from stocks and shares!</h1>
     <SearchForm searchStock={findStocks} />
-    {/* <StockForm addStock = {addStock} /> */}
     <StockList
     stocks={stocks}
     updateStock = {updateStock}

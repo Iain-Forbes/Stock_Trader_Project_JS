@@ -1,4 +1,4 @@
-import Stock from './Stock.js';
+import Stock from './Portfolio.js';
 
 const StockList = ({stocks}) => {
     const stockInfo = stocks.map(stock => {
@@ -7,6 +7,8 @@ const StockList = ({stocks}) => {
         key = {stock._id}
         stock ={stock} />)
     });
+
+
 
     return (
         <>
