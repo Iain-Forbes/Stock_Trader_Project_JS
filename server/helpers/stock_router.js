@@ -17,32 +17,23 @@ const AVRouter = function () {
 
   const StockRouter = express.Router();
 
-//External API Fetch access, localhost:3000/stock displays one entry for Microsoft
-      StockRouter.get('/index', (req, res ) =>{
-      const url = `https://spreadsheets.google.com/feeds/list/0AhySzEddwIC1dEtpWF9hQUhCWURZNEViUmpUeVgwdGc/1/public/basic?alt=json`; 
-  
-      fetch(url)
-        .then(jsonData => jsonData.json())
-        .then(data => res.json(data));
-      }, [])
+  //This is the API data 
 
-      StockRouter.get('/stock', (req, res ) =>{
-        const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=MSFT&apikey=demo`; 
-    
-        fetch(url)
-          .then(jsonData => jsonData.json())
-          .then(data => res.json(data));
-        }, [])
-        
-// AlphaRouter.post('/stocks', (req, res ) =>{
-//     const body = JSON.parse(JSON.stringify(req.body));
-//     const { ticker, type } = body;
-//     const url = `https://www.alphavantage.co/query?function=${timePeriod(type)}symbol=${ticker}&apikey=process.env.API_KEY `
+  router.get('/index/ftse', (req, res ) =>{
+    const url = `https://spreadsheets.google.com/feeds/list/0AhySzEddwIC1dEtpWF9hQUhCWURZNEViUmpUeVgwdGc/1/public/basic?alt=json`; 
+
+    fetch(url)
+      .then(jsonData => jsonData.json())
+      .then(data => res.json(data));
+    }, [])
+
+  router.get('/stock/msft', (req, res ) =>{
+    const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=MSFT&apikey=demo`; 
   
-//     fetch(url)
-//       .then(jsonData => jsonData.json())
-//       .then(data => res.json(data));
-//   }, [])
+    fetch(url)
+      .then(jsonData => jsonData.json())
+      .then(data => res.json(data));
+    }, [])
 
 
     

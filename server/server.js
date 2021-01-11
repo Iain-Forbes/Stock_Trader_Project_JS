@@ -8,20 +8,17 @@ app.use(cors());
 app.use(bodyParser.json()); 
 
 const MongoClient = require('mongodb').MongoClient;
-const createRouter = require('./helpers/create_router.js')
-const createAVRouter = require('./helpers/stock_router.js');
+const createRouter = require('./helpers/positions_router.js')
 
 MongoClient.connect('mongodb://localhost:27017')
   .then((client) => {
     const db = client.db('portfolio');
-    const stocksCollection = db.collection('stocks');
-    const stocksRouter = createRouter(stocksCollection);
-    app.use('/api/stocks', stocksRouter);
+    const positionsCollection = db.collection('positions');
+    const positionsRouter = createRouter(positionsCollection);
+    app.use('/api/positions', positionsRouter);
+    
   })
   .catch(console.err);
-
-  const AVrouter = createAVRouter();
-  app.use('/api/stock', AVrouter)
 
 
 
