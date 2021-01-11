@@ -1,4 +1,4 @@
-import {addStock} from "../Services/StockService";
+import {addStock} from "../Services/PortfolioService";
 
 const Portfolio = ({stock, addStock}) => {
     console.log(stock);
