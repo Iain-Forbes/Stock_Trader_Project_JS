@@ -79,6 +79,11 @@
   font-size: 1.2em;
 }
 
+#portfolioData {
+  background-color: aliceblue;
+  width: auto;
+}
+
 
 @keyframes App-logo-spin {
   from {

@@ -17,27 +17,19 @@ function App() {
     })  
   }, [])
 
-
-
   useEffect(() => {
     getStockIndex("ftse")
     .then((allStockIndex) => {
-      // var result = Object.keys(allStockIndex).map((key) => [Number(key), allStockIndex[key]]);
-      
+      // var result = Object.keys(allStockIndex).map((key) => [Number(key), allStockIndex[key]]); 
       const stockNodes = allStockIndex.feed.entry.map((stock) => {
         if (stock){
             return (
                 stock.title['$t']
-            )};
-       
-            
+            )};         
     });
     console.log(stockNodes)
-      // setStockIndex(allStockIndex['feed']['entry']);
-      
+      // setStockIndex(allStockIndex['feed']['entry']);  
     })
-
-    
   }, [])
 
 
