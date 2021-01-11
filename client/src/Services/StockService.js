@@ -15,7 +15,7 @@ export const getStockIndex = () => {
 // data - this will be a request from the search form. Not sure if
 // I need to specify a 'GET', or whether that is automatically assumed.
 //
-// export const getSearchStock = (id) => {
+// export const getSearchStock = (UserId) => {
 //     return fetch(baseURL + id, {
 //         // method: 'GET'
 //     })

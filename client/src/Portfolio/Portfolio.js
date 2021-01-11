@@ -13,7 +13,10 @@ const Portfolio = ({stock, addStock}) => {
     // }
 
     return (
-        <>
+        <> 
+        <tr>
+            
+        </tr>
             <p>{stock.code}</p>
             <p>Name: {stock.name}</p>
             <p>Price: {stock.price}</p>
