@@ -20,6 +20,9 @@ MongoClient.connect('mongodb://localhost:27017')
   })
   .catch(console.err);
 
+const createStockRouter = require('./helpers/stock_router.js')
+const stockRouter = createStockRouter();
+app.use('/api/stock', stockRouter);
 
 app.listen(3000, function () {
   console.log(`Listening on port ${ this.address().port }`);

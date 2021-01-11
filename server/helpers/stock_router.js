@@ -13,13 +13,13 @@ require("dotenv").config();
 
 const timePeriod = require('./constraints');
 
-const AVRouter = function () {
+const createStockRouter = function () {
 
-  const StockRouter = express.Router();
+  const stockRouter = express.Router();
 
   //This is the API data 
 
-  router.get('/index/ftse', (req, res ) =>{
+  stockRouter.get('/index/ftse', (req, res ) =>{
     const url = `https://spreadsheets.google.com/feeds/list/0AhySzEddwIC1dEtpWF9hQUhCWURZNEViUmpUeVgwdGc/1/public/basic?alt=json`; 
 
     fetch(url)
@@ -27,7 +27,8 @@ const AVRouter = function () {
       .then(data => res.json(data));
     }, [])
 
-  router.get('/stock/msft', (req, res ) =>{
+
+    stockRouter.get('/stock/msft', (req, res ) =>{
     const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=MSFT&apikey=demo`; 
   
     fetch(url)
@@ -37,9 +38,9 @@ const AVRouter = function () {
 
 
     
-    return StockRouter
+    return stockRouter
 };
 
 
-module.exports = AVRouter;
+module.exports = createStockRouter;
 
