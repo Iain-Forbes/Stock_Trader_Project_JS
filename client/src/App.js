@@ -34,16 +34,12 @@ function App() {
   }, [])
 
   useEffect(() => {
-    getStockSymbol("IBM")
+    getStockSymbol("AAL.L")
     .then((allSymbolData) => {
-      const SymbolDataNodes = allSymbolData[Object.keys].map((symbol) => {
-        if (symbol){
-            return (
-                symbol["high"]
-            )};       
+      const values = Object.values(allSymbolData["Time Series (Daily)"])     
+      console.log(values) 
     });
-    console.log(SymbolDataNodes) 
-    })
+    
   }, [])
 
 
