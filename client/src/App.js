@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 import {getPortfolio} from "./Services/PortfolioService";
-import {getStockIndex} from "./Services/StockService";
+import {getStockIndex, getStockSymbol} from "./Services/StockService";
 import StockList from "./Portfolio/PortfolioList";
 import SearchForm from "./SearchForm";
 import './App.css';
@@ -9,6 +9,7 @@ import './App.css';
 function App() {
   const [stocks, setPortfolio] = useState([]);
   const [stockIndex, setStockIndex] = useState([]);
+  const [symbol, setsymbol] = useState([]);
 
   useEffect(() => {
     getPortfolio()
@@ -20,16 +21,23 @@ function App() {
   useEffect(() => {
     getStockIndex("ftse")
     .then((allStockIndex) => {
-      // var result = Object.keys(allStockIndex).map((key) => [Number(key), allStockIndex[key]]); 
       const stockNodes = allStockIndex.feed.entry.map((stock) => {
         if (stock){
             return (
                 stock.title['$t']
-            )};         
+            )};       
     });
-    console.log(stockNodes)
-      // setStockIndex(allStockIndex['feed']['entry']);  
+    console.log(stockNodes) 
     })
+  }, [])
+
+  useEffect(() => {
+    getStockSymbol("AAL.L")
+    .then((allSymbolData) => {
+      const values = Object.values(allSymbolData["Time Series (Daily)"])     
+      console.log(values) 
+    });
+    
   }, [])
 
 
@@ -78,8 +86,9 @@ function App() {
     stocks={stocks}
     updateStock = {updateStock}
     deleteStock = {deleteStock}
+    stockIndex = {stockIndex}
     />
-    <p>{stockIndex}</p>
+    
     </div>
   );
 }
