@@ -22,29 +22,28 @@ function App() {
     getStockIndex("ftse")
     .then((allStockIndex) => {
 
-      const stockNodes = allStockIndex.feed.entry.map((stock) => {
+    const stockNodes = allStockIndex.feed.entry.map((stock) => {  
+      let output = {};
         if (stock){
-          let output = {};
           stock.content['$t'].split(", ").forEach(str => {
             let [key, value] = str.split(": ");
             if (value === "#N/A") {
               value = null;
-            }
+          }
             output[key] = value;
-            console.log(output.name)
-            console.log(output.price)
-            console.log(output.change)
-});
-      
-            return (
-              // name,
-              stock.title['$t']
-              
-            )};       
+          
+        });        
+      };   
+      return (
+        {title: stock.title['$t'],
+        name: output.name,
+        price: output.price,
+        change: output.change}
+      )  
     });
-    console.log(stockNodes) 
-    })
-  }, [])
+  })
+}, [])
+
 
   useEffect(() => {
     getStockSymbol("IBM")
