@@ -14,7 +14,15 @@
 }
 
 .index-data-area{
-  background-color: cornflowerblue;
+  background-color: rgb(148, 181, 244);
+  border:1px black;
+  width: 80%;
+  text-align: right;
+  padding: 10px 5px;
+}
+
+#heading {
+  text-align: left ;
 }
 
 .App-header {

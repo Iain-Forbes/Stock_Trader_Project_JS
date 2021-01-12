@@ -3,7 +3,6 @@ import {getStockIndex, getStockSymbol} from "../Services/StockService";
 import Stock from "./Stock"
 
 
-
 const StockList = () => {
 
     const [stockIndex, setStockIndex] = useState([]);
@@ -21,12 +20,13 @@ const StockList = () => {
               if (value === "#N/A") {
                 value = null;
             }
-              output[key] = value;
-            
+              output[key] = value;           
           });        
         };   
+
         return(
-            <Stock title = {stock.title['$t']}
+            <Stock 
+            title = {stock.title['$t']}
             name = {output.name}
             price = {output.price}
             change = {output.change} /> 
@@ -35,8 +35,7 @@ const StockList = () => {
       setStockIndex(stockNodes)
     })
   }, [])
-  
-  
+   
     useEffect(() => {
       getStockSymbol("IBM")
       .then((allSymbolData) => {
@@ -50,13 +49,13 @@ const StockList = () => {
         <>
         <h1>ftse 101</h1>
         <table className="index-data-area">
-        <tr>
-        <th>Symbol</th>
-        <th>Company Name</th>
-        <th>Price</th>
-        <th>Change +/-</th>
-        </tr>
-        {stockIndex}
+          <tr itemID="heading">
+            <th>Symbol</th>
+            <th>Company Name</th>
+            <th>Price</th>
+            <th>Change +/-</th>
+          </tr>
+          {stockIndex}
         </table>
         </>
         )
