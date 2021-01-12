@@ -26,7 +26,7 @@ const StockList = () => {
 
         return(
             <Stock 
-            title = {stock.title['$t']}
+            symbol = {stock.title['$t']}
             name = {output.name}
             price = {output.price}
             change = {output.change} /> 
@@ -49,12 +49,13 @@ const StockList = () => {
         <>
         <h1>ftse 101</h1>
         <table className="index-data-area">
-          <tr itemID="heading">
+          <tr itemID="heading" itemScope="rowgroup">
             <th>Symbol</th>
             <th>Company Name</th>
-            <th>Price</th>
-            <th>Change +/-</th>
+            <th itemID="price">Price</th>
+            <th itemID="change">Change +/-</th>
           </tr>
+          <br></br>
           {stockIndex}
         </table>
         </>

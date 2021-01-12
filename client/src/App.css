@@ -14,13 +14,17 @@
 }
 
 .index-data-area{
-  background-color: rgb(148, 181, 244);
-  border:1px black;
+  background-color: rgb(202, 217, 245);
+  border:2px solid  black;
+  border-radius: 5px;
   width: 80%;
-  text-align: right;
+  text-align: left;
   padding: 10px 5px;
 }
 
+.index-data-area > .price {
+  text-align: right;
+}
 #heading {
   text-align: left ;
 }

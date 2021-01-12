@@ -3,6 +3,7 @@ import {getPortfolio} from "./Services/PortfolioService";
 import StockList from "./StockData/StockList";
 import SearchForm from "./SearchForm";
 import './App.css'; 
+import { ScrollView } from "@cantonjs/react-scroll-view";
 
 
 function App() {
@@ -52,16 +53,19 @@ function App() {
     setPortfolio(removeStock);
   };
 
+  const handleEndReached = () => {
+    console.log("load more");
+  };
+
   return (
     <div>
     <h1> NIK Stocks </h1>
+    <h1>Top 10 </h1>
     <SearchForm searchStock={findStocks} />
-    <StockList/>
-    <div styles={{height:'50px', overflowY:'scroll'}}>
-
-    </div>
-    
-    </div>
+    <ScrollView onEndReached={handleEndReached} style={{ height: '50vh' }}>
+        <StockList/>
+      </ScrollView>
+      </div>
   );
 }
 
