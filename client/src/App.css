@@ -13,6 +13,10 @@
   }
 }
 
+.index-data-area{
+  background-color: cornflowerblue;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

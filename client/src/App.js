@@ -3,7 +3,6 @@ import {getPortfolio} from "./Services/PortfolioService";
 import StockList from "./StockData/StockList";
 import SearchForm from "./SearchForm";
 import './App.css';
-import StockContainer from "./Containers/StockContainer"
 
 
 function App() {
@@ -57,7 +56,7 @@ function App() {
     <div>
     <h1> Making millions from stocks and shares!</h1>
     <SearchForm searchStock={findStocks} />
-    <StockContainer/>
+    <StockList/>
     {/* <StockList
     stocks={stocks}
     updateStock = {updateStock}
