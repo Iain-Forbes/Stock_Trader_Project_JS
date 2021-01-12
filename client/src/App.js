@@ -21,10 +21,25 @@ function App() {
   useEffect(() => {
     getStockIndex("ftse")
     .then((allStockIndex) => {
+
       const stockNodes = allStockIndex.feed.entry.map((stock) => {
         if (stock){
+          let output = {};
+          stock.content['$t'].split(", ").forEach(str => {
+            let [key, value] = str.split(": ");
+            if (value === "#N/A") {
+              value = null;
+            }
+            output[key] = value;
+            console.log(output.name)
+            console.log(output.price)
+            console.log(output.change)
+});
+      
             return (
-                stock.title['$t']
+              // name,
+              stock.title['$t']
+              
             )};       
     });
     console.log(stockNodes) 
@@ -32,7 +47,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    getStockSymbol("AAL.L")
+    getStockSymbol("IBM")
     .then((allSymbolData) => {
       const values = Object.values(allSymbolData["Time Series (Daily)"])
       console.log(values[0]["2. high"])
