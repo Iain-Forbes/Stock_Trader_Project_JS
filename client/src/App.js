@@ -62,7 +62,7 @@ function App() {
     <h1> NIK Stocks </h1>
     <h1>Top 10 </h1>
     <SearchForm searchStock={findStocks} />
-    <ScrollView onEndReached={handleEndReached} style={{ height: '50vh' }}>
+    <ScrollView className="scrollview-data" onEndReached={handleEndReached} style={{ height: '50vh' }}>
         <StockList/>
       </ScrollView>
       </div>
