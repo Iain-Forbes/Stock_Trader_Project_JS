@@ -12,25 +12,37 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+body {
+  background-color: rgb(224, 227, 233);
+}
 
-.scrollview-data {
-  border: 2px solid red;
+.heading {
+  /* background-color: rgb(114, 158, 242); */
+  text-align: left ;
+  padding: 10px 10px;
+  font-size: 20px;
+  color: #1583cc;
+
 }
 
 .index-data-area{
   background-color: rgb(202, 217, 245);
-  border:2px solid  black;
+  border:2px solid  rgb(81, 117, 208);
   border-radius: 5px;
   width: 80%;
   text-align: left;
   padding: 10px 5px;
+  align-content: center;
+  margin-left:auto; 
+  margin-right:auto;
 }
 
+.index-data-area:hover {
+  text-decoration: underline;
+  color: #1515cc;
+}
 .index-data-area > .price {
   text-align: right;
-}
-#heading {
-  text-align: left ;
 }
 
 .App-header {

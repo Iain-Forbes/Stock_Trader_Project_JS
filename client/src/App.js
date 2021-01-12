@@ -58,14 +58,19 @@ function App() {
   };
 
   return (
+    <>
+    <header>
+      <h1></h1>
+    </header>
     <div>
     <h1> NIK Stocks </h1>
-    <h1>Top 10 </h1>
     <SearchForm searchStock={findStocks} />
+      <h4>Top 10?</h4>
     <ScrollView className="scrollview-data" onEndReached={handleEndReached} style={{ height: '50vh' }}>
         <StockList/>
       </ScrollView>
       </div>
+      </>
   );
 }
 

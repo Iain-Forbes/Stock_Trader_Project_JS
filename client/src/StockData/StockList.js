@@ -47,13 +47,13 @@ const StockList = () => {
     
     return(
         <>
-        <h1>ftse 101</h1>
         <table className="index-data-area">
-          <tr itemID="heading" itemScope="rowgroup">
+          <tr className="heading" itemScope="rowgroup">
             <th>Symbol</th>
             <th>Company Name</th>
             <th itemID="price">Price</th>
             <th itemID="change">Change +/-</th>
+            <hr></hr>
           </tr>
           <br></br>
           {stockIndex}

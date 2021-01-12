@@ -1,4 +1,5 @@
 const Stock = ({symbol, name, price, change}) =>{
+    
     const handleClick = () => {
         console.log("we are in stock - click!"+ symbol)
       
