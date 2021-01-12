@@ -2,7 +2,7 @@ import {useState, useEffect} from "react";
 import {getPortfolio} from "./Services/PortfolioService";
 import StockList from "./StockData/StockList";
 import SearchForm from "./SearchForm";
-import './App.css';
+import './App.css'; 
 
 
 function App() {
@@ -54,14 +54,12 @@ function App() {
 
   return (
     <div>
-    <h1> Making millions from stocks and shares!</h1>
+    <h1> NIK Stocks </h1>
     <SearchForm searchStock={findStocks} />
     <StockList/>
-    {/* <StockList
-    stocks={stocks}
-    updateStock = {updateStock}
-    deleteStock = {deleteStock} */}
-    
+    <div styles={{height:'50px', overflowY:'scroll'}}>
+
+    </div>
     
     </div>
   );
