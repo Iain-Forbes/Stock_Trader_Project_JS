@@ -61,10 +61,6 @@ function App() {
     setPortfolio(removeStock);
   };
 
-  const handleEndReached = () => {
-    console.log("load more");
-  };
-
   const onStockSelected = (symbol, name, price) => {
     setSymbol(symbol);
     setName(name);
@@ -97,7 +93,7 @@ function App() {
     <br></br>
     <StockForm symbol={symbol} name={name} price={price} onPurchase={onPurchase} />
     <h4>Current Market Trends</h4>
-    <ScrollView className="scrollview-data" onEndReached={handleEndReached}>
+    <ScrollView className="scrollview-data">
         <StockList onStockSelected={onStockSelected}/>
       </ScrollView>
       </div>
