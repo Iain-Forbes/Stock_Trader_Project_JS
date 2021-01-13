@@ -1,6 +1,7 @@
 import {addStock} from "../Services/PortfolioService";
 
-const Portfolio = ({}) => {
+const Portfolio = ({stock}) => {
+        
 
     return (
         <> 
@@ -22,6 +23,9 @@ const Portfolio = ({}) => {
                 <td>{stock.change}</td>
             </tr>
         </table>
+        <div>
+            <button>Add to Portfolio</button>
+        </div>
         </>
        
     )
