@@ -27,7 +27,7 @@ const StockForm = ({symbol, name, price}) =>{
 
             <input
                 type="submit"
-                value="submit"
+                value="Buy"
             />
 
         </form>
