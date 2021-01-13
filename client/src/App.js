@@ -86,18 +86,36 @@ function App() {
   return (
     <>
     <header>
-      <h3>NIK Ltd    Live Market     My Portfolio</h3>
+      <h2>NIK Ltd</h2>
+      <section className="advertisment">
+        <h2>Buy Stocks Online Today</h2>
+        <h3>Start Building your Portfolio </h3>
+      </section>
     </header>
-    <div>
+    <hr className="header-hr"></hr>
+    
     <SearchForm searchStock={findStocks} />
     <br></br>
     <StockForm symbol={symbol} name={name} price={price} onPurchase={onPurchase} />
-    <h4>Current Market Trends</h4>
+    <h3> Latest Market Trends</h3>
     <ScrollView className="scrollview-data">
         <StockList onStockSelected={onStockSelected}/>
       </ScrollView>
-      </div>
-      <PortfolioList stocks = {stocks}/>
+    
+      <br></br>
+      <div idName="portfolio-heading" ><h3>Client Portfolio</h3></div>
+      
+      <br></br>
+      <PortfolioList className="portfolio-table" stocks = {stocks}/>
+
+      <br></br>
+      <footer>
+        <div>
+          <h5>What our clients say
+            <br></br>
+              Simple to use. Helpful information about different types of investment, easy to understand even if you don't know anything about investing</h5>
+        </div>
+      </footer>
       </>
   );
 }

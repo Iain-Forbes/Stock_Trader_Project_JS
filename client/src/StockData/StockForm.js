@@ -18,7 +18,7 @@ const StockForm = ({symbol, name, price, onPurchase}) =>{
     return(
        
 
-        <form onSubmit={handleSubmit}>
+        <form className="stock-form" onSubmit={handleSubmit}>
 
             <label for="symbol">Symbol</label>
             <input type="text" id="symbol" name="symbol" value={symbol}/>

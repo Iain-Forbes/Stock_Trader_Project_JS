@@ -14,6 +14,7 @@
 }
 body {
   background-color: rgb(251, 253, 255);
+  border: 3px solid #1583cc;
 }
 
 .header {
@@ -22,15 +23,34 @@ body {
   padding: 10px 10px;
   font-size: 20px;
   color: #1583cc;
-
 }
 
-h4 > {
+.advertisment {
+  display: inline-block;
+  background-color: powderblue;
+  border-radius: 15px;
+  margin: 15px;
+  padding: 20px;
+  width: 400px;
+  height: 100px;
+  font-size: 0.9em;
+  color: #51bacc;
+}
+
+h3 {
   text-align: center;
+  color: #1583cc;
+}
+
+h2 {
+  color: #1a8dda;
+}
+.header-hr {
+  border: 1px solid #1583cc;
 }
 
 .index-data-area{
-  background-color: rgb(202, 217, 245);
+  background-color: rgb(153, 206, 241);
   width: 80%;
   text-align: left;
   padding: 10px 5px;
@@ -40,14 +60,15 @@ h4 > {
 }
 
 .index-row:hover {
-  background-color: rgb(192, 234, 249);
+  background-color: rgb(164, 216, 235);
   border-radius: 5px;
-  color: #1515cc;
+  color: #5078e6;
 }
 
 .scrollview-data {
-  background-color: rgb(202, 217, 245);
-  border:2px solid  rgb(81, 117, 208);
+  /* background-color: rgb(202, 217, 245); */
+  background-color: rgb(153, 206, 241);
+  border:2px solid  rgb(98, 133, 220);
   border-radius: 5px;
   width: 90%;
   height: 35vh;
@@ -56,8 +77,59 @@ h4 > {
   margin-right:auto;
 }
 
-.index-data-area > .price {
-  text-align: right;
+.portfolio-table {
+margin: 10px;
+padding: 5px 5px;
+}
+
+.portfolio-data {
+  background-color: rgb(169, 214, 244);
+  border:2px solid  rgb(98, 133, 220);
+  /* background-color: rgb(202, 217, 245);
+  border:2px solid  rgb(81, 117, 208); */
+  display: block;
+  width: 75%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  align-content: center;
+  margin-left:auto; 
+  margin-right:auto;
+}
+
+.portfolio-data:hover {
+  background-color: rgb(167, 215, 247);
+  border-radius: 5px;
+  color: #5078e6;
+}
+
+.stock-form {
+  font-size: 16px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  max-width: 40%;
+  margin: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;;
+  font-size: 1em;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 5px 5px;
+  margin: 5px;
+  box-shadow: 1px 1px 3px;
+}
+
+input[type="submit"] {
+  padding: 5px 5px;
+  margin: 5px;
+  box-shadow: 1px 2px 5px #5555;
+  background-color: #7ac7c8;
+  color: whitesmoke;
+  border: whitesmoke;
 }
 
 .App-header {

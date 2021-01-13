@@ -5,8 +5,21 @@ const Portfolio = ({stock}) => {
 
     return (
         <> 
-        <table id="portfolioData" >
+        <table className="portfolio-data" >
             <tr>
+                <th> Symbol</th>
+                <th> Name</th>
+                <th> Price</th>
+                <th> Number of Shares</th>  
+            </tr>
+            <tr>
+                <td>{stock.symbol}</td>
+                <td>{stock.name}</td>
+                <td>{stock.price}</td>
+                <td>{stock.volume}</td>
+            </tr>
+            
+            {/* <tr>
                 <th>Symbol:</th>
                 <td>{stock.symbol}</td>
             </tr>
@@ -21,7 +34,7 @@ const Portfolio = ({stock}) => {
             <tr>
                 <th>Volume:</th>
                 <td>{stock.volume}</td>
-            </tr>
+            </tr> */}
 
         </table>
         </>
