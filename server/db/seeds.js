@@ -3,18 +3,18 @@ db.dropDatabase();
 
 db.positions.insertMany([
 {
-    code: "BT.L",
+    symbol: "BT.L",
     name: "BT",
     price: "150",
-    numberOfShares: 10,
+    volume: 10,
     userId: "123456"
 }, 
 
 {
-    code: "AV.L",
+    symbol: "AV.L",
     name: "AVIVA",
     price: "348.6",
-    numberOfShares: 20, 
+    volume: 20, 
     userId: "123456"
 }
 ]);
