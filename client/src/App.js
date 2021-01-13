@@ -110,10 +110,11 @@ function App() {
 
       <br></br>
       <footer>
-        <div>
-          <h5>What our clients say
+        <hr></hr>
+        <div className="reviews">
+          <h5>What our clients say 💬
             <br></br>
-              Simple to use. Helpful information about different types of investment, easy to understand even if you don't know anything about investing</h5>
+              ❝Simple to use. Helpful information about different types of investment, easy to understand even if you don't know anything about investing❞</h5>
         </div>
       </footer>
       </>

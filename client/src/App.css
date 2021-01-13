@@ -24,8 +24,17 @@ body {
   font-size: 20px;
   color: #1583cc;
 }
+.reviews {
+  margin: 20px;
+  text-align: center;
+}
 
 .advertisment {
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center; */
   display: inline-block;
   background-color: powderblue;
   border-radius: 15px;
@@ -47,6 +56,9 @@ h2 {
 }
 .header-hr {
   border: 1px solid #1583cc;
+}
+.footer > hr {
+border: 1px solid #1583cc ;
 }
 
 .index-data-area{
@@ -91,8 +103,8 @@ padding: 5px 5px;
   width: 75%;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
   border-radius: 5px;
   align-content: center;
   margin-left:auto; 
@@ -100,20 +112,24 @@ padding: 5px 5px;
 }
 
 .portfolio-data:hover {
-  background-color: rgb(167, 215, 247);
+  background-color: rgb(179, 218, 244);
   border-radius: 5px;
   color: #5078e6;
 }
 
 .stock-form {
-  font-size: 16px;
+  background-color: #93d8e4;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 12px;
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
   max-width: 40%;
   margin: 25px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;;
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 input[type="text"],
@@ -128,8 +144,9 @@ input[type="submit"] {
   margin: 5px;
   box-shadow: 1px 2px 5px #5555;
   background-color: #7ac7c8;
-  color: whitesmoke;
+  color: rgb(54, 61, 61);
   border: whitesmoke;
+  font-weight: 100px;
 }
 
 .App-header {
