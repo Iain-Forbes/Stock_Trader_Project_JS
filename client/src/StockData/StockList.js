@@ -3,7 +3,7 @@ import {getStockIndex, getStockSymbol} from "../Services/StockService";
 import Stock from "./Stock"
 
 
-const StockList = () => {
+const StockList = ({onStockSelected}) => {
 
     const [stockIndex, setStockIndex] = useState([]);
     const [symbol, setsymbol] = useState([]);
@@ -29,7 +29,8 @@ const StockList = () => {
             symbol = {stock.title['$t']}
             name = {output.name}
             price = {output.price}
-            change = {output.change} /> 
+            change = {output.change} 
+            onStockSelected={onStockSelected}/> 
             )
       });
       setStockIndex(stockNodes)

@@ -1,7 +1,8 @@
-const Stock = ({symbol, name, price, change}) =>{
+const Stock = ({symbol, name, price, change, onStockSelected}) =>{
     
     const handleClick = () => {
         console.log("we are in stock - click!"+ symbol)
+        onStockSelected(symbol, name, price);
       
     }
     

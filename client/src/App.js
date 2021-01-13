@@ -57,6 +57,10 @@ function App() {
     console.log("load more");
   };
 
+  const onStockSelected = (symbol, name, price) => {
+    console.log("hello from stock!!!");
+  }
+
   return (
     <>
     <header>
@@ -67,7 +71,7 @@ function App() {
     <SearchForm searchStock={findStocks} />
       <h4>Top 10?</h4>
     <ScrollView className="scrollview-data" onEndReached={handleEndReached} style={{ height: '50vh' }}>
-        <StockList/>
+        <StockList onStockSelected={onStockSelected}/>
       </ScrollView>
       </div>
       </>
