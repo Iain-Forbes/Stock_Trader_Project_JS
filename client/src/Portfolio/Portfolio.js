@@ -1,22 +1,12 @@
-import {addStock} from "../Services/PortfolioService";
 
-const Portfolio = ({stock, addStock}) => {
+const Portfolio = ({stock}) => {
     console.log(stock);
-
-    //unsure what we need in here addStock/updateStock etc? 
-
-    // const handleAdd = () => {
-    //     addStock(stock._id)
-    //     .then(() => {
-    //         buyStock(stock._id);
-    //     })
-    // }
 
     return (
         <> 
         <table id="portfolioData" >
             <tr>
-                <th>Symbol/Code:</th>
+                <th>Symbol:</th>
                 <td>{stock.code}</td>
             </tr>
             <tr>
@@ -28,13 +18,11 @@ const Portfolio = ({stock, addStock}) => {
                 <td>{stock.price}</td>
             </tr>
             <tr>
-                <th>Change:</th>
-                <td>{stock.change}</td>
+                <th>Number of Shares:</th>
+                <td>{stock.volume}</td>
             </tr>
+
         </table>
-        <div>
-            <button>Add to Portfolio</button>
-        </div>
         </>
        
     )
