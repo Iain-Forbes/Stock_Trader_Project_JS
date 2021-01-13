@@ -70,17 +70,18 @@ function App() {
   }
 
   const onPurchase = (symbol, name, price, volume) => {
-
+    
     // Create object to hold purchase details
-    const purchaseObject = 
-                        "{ symbol: " + symbol + ", " +
-                        "name: " + name + ", " +
-                        "price: " + price + ", " +
-                        "volume: " + volume + ", " +
-                        "userId: " + "123456 }";
+    const purchaseObject = {
+                        symbol, 
+                        name,
+                        price, 
+                        volume, 
+    }
     
     // Update portfolio with new shares
-    addStock(purchaseObject);
+    // console.log("Hi " + purchaseObject)
+    return purchaseObject
 
   }
 

@@ -1,16 +1,29 @@
 import React from 'react';
+import {addStock} from '../Services/PortfolioService'
+import {useState} from 'react'
 
 const StockForm = ({symbol, name, price, onPurchase}) =>{
+
+    const [volume, setVolume] = useState(0)
+
+    const handleVolumeChange = event => setVolume(event.target.value)
+    
 
     console.log("in stockform: " + name)
 
     const handleSubmit = (ev) => {
-        const volume = ev.target.value;
-        onPurchase(symbol, name, price, volume);
+        ev.preventDefault();
+        const stockObject = onPurchase(symbol, name, price, volume);
+        console.log("in sub: " + stockObject)
+        console.log(ev.target)
+        addStock(stockObject)
+        
+        
     }
-
+    
     return(
-        <form>
+
+        <form onSubmit={handleSubmit}>
 
             <label for="symbol">Symbol</label>
             <input type="text" id="symbol" name="symbol" value={symbol}/>
@@ -22,18 +35,19 @@ const StockForm = ({symbol, name, price, onPurchase}) =>{
             <input type="text" id="price" name="price" value={price}/>
 
             <label for="volume">Volume</label>
-            <input 
+            <input onChange={handleVolumeChange} 
                 type="number" 
                 id="volume" 
                 name="volume" 
                 placeholder="number of shares" 
+                value = {volume}
                 autofocus 
                 required />
 
             <input
                 type="submit"
                 value="Buy"
-                onSubmit={handleSubmit}
+                
             />
 
         </form>
