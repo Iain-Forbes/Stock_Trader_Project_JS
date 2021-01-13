@@ -17,7 +17,13 @@ const StockForm = ({symbol, name, price}) =>{
             <input type="text" id="price" name="price" value={price}/>
 
             <label for="volume">Volume</label>
-            <input type="number" id="volume" name="volume" value="0" />
+            <input 
+                type="number" 
+                id="volume" 
+                name="volume" 
+                placeholder="number of shares" 
+                autofocus 
+                required />
 
             <input
                 type="submit"

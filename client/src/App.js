@@ -80,7 +80,7 @@ function App() {
     <br></br>
     <StockForm symbol={symbol} name={name} price={price}/>
     <h4>Current Market Trends</h4>
-    <ScrollView className="scrollview-data" onEndReached={handleEndReached} style={{ height: '50vh' }}>
+    <ScrollView className="scrollview-data" onEndReached={handleEndReached}>
         <StockList onStockSelected={onStockSelected}/>
       </ScrollView>
       </div>
