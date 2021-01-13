@@ -11,8 +11,6 @@ app.use(bodyParser.json());
 
 require("dotenv").config();
 
-const timePeriod = require('./constraints');
-
 const createStockRouter = function () {
 
   const stockRouter = express.Router();
@@ -36,7 +34,6 @@ const createStockRouter = function () {
       .then(jsonData => jsonData.json())
       .then(data => res.json(data));
     }, [])
-
 
     
     return stockRouter

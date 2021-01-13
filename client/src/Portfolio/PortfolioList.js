@@ -15,5 +15,4 @@ const PortfolioList = ({stocks}) => {
     );
 }
 
-
 export default PortfolioList;

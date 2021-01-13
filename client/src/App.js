@@ -82,7 +82,6 @@ function App() {
     }
     
     // Update portfolio with new shares
-    // console.log("Hi " + purchaseObject)
     return purchaseObject
 
   }

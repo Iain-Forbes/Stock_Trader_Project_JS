@@ -7,18 +7,13 @@ const StockForm = ({symbol, name, price, onPurchase}) =>{
     const [volume, setVolume] = useState(0)
 
     const handleVolumeChange = event => setVolume(event.target.value)
-    
-
-    console.log("in stockform: " + name)
 
     const handleSubmit = (ev) => {
         ev.preventDefault();
         const stockObject = onPurchase(symbol, name, price, volume);
         console.log("in sub: " + stockObject)
         console.log(ev.target)
-        addStock(stockObject)
-        
-        
+        addStock(stockObject)   
     }
     
     return(

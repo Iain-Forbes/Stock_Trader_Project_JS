@@ -2,7 +2,6 @@ import {useState, useEffect} from "react";
 import {getStockIndex, getStockSymbol} from "../Services/StockService";
 import Stock from "./Stock"
 
-
 const StockList = ({onStockSelected}) => {
 
     const [stockIndex, setStockIndex] = useState([]);

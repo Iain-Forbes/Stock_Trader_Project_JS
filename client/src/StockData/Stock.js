@@ -1,9 +1,7 @@
 const Stock = ({symbol, name, price, change, onStockSelected}) =>{
     
     const handleClick = () => {
-        console.log("we are in stock - click!"+ symbol)
-        onStockSelected(symbol, name, price);
-      
+        onStockSelected(symbol, name, price);   
     }
     
     return(
@@ -14,7 +12,6 @@ const Stock = ({symbol, name, price, change, onStockSelected}) =>{
             <td>{change}</td>
         </tr>
         )
-
 } 
 
 export default Stock
