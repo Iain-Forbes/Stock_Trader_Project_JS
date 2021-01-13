@@ -28,7 +28,7 @@ function App() {
     // list so that it can be sent back 
 
     /*
-    StockService.getSearchStock(code)
+    PortfolioService.getSearchStock(code)
     .then(set search result form data)
     */
     
@@ -67,13 +67,13 @@ function App() {
   return (
     <>
     <header>
-      <h1></h1>
+      <h3>NIK Ltd    Live Market     My Portfolio</h3>
     </header>
     <div>
-    <h1> NIK Stocks </h1>
     <SearchForm searchStock={findStocks} />
+    <br></br>
     <StockForm />
-      <h4>Top 10?</h4>
+    <h4>Current Market Trends</h4>
     <ScrollView className="scrollview-data" onEndReached={handleEndReached} style={{ height: '50vh' }}>
         <StockList onStockSelected={onStockSelected}/>
       </ScrollView>

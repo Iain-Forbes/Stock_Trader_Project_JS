@@ -13,10 +13,10 @@
   }
 }
 body {
-  background-color: rgb(224, 227, 233);
+  background-color: rgb(251, 253, 255);
 }
 
-.heading {
+.header {
   /* background-color: rgb(114, 158, 242); */
   text-align: left ;
   padding: 10px 10px;
@@ -25,10 +25,12 @@ body {
 
 }
 
+h4 > {
+  text-align: center;
+}
+
 .index-data-area{
   background-color: rgb(202, 217, 245);
-  border:2px solid  rgb(81, 117, 208);
-  border-radius: 5px;
   width: 80%;
   text-align: left;
   padding: 10px 5px;
@@ -38,11 +40,17 @@ body {
 }
 
 .index-row:hover {
-  background-color: honeydew;
+  background-color: rgb(192, 234, 249);
   border-radius: 5px;
   color: #1515cc;
 }
 
+.scrollview-data {
+  background-color: rgb(202, 217, 245);
+  border:2px solid  rgb(81, 117, 208);
+  border-radius: 5px;
+  width: 55%;
+}
 
 .index-data-area > .price {
   text-align: right;
