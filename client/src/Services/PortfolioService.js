@@ -18,6 +18,9 @@ export const getPortfolio = (userId) => {
 // }
 
 export const addStock = (stock) => {
+    
+    console.log("I am being called to add to the portfolio!!!")
+
     return fetch(baseURL, {
         method: 'POST', 
         body: JSON.stringify(stock),

@@ -1,8 +1,13 @@
 import React from 'react';
 
-const StockForm = ({symbol, name, price}) =>{
+const StockForm = ({symbol, name, price, onPurchase}) =>{
 
     console.log("in stockform: " + name)
+
+    const handleSubmit = (ev) => {
+        const volume = ev.target.value;
+        onPurchase(symbol, name, price, volume);
+    }
 
     return(
         <form>
@@ -28,6 +33,7 @@ const StockForm = ({symbol, name, price}) =>{
             <input
                 type="submit"
                 value="Buy"
+                onSubmit={handleSubmit}
             />
 
         </form>

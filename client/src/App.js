@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import {getPortfolio} from "./Services/PortfolioService";
+import {getPortfolio, addStock} from "./Services/PortfolioService";
 import StockList from "./StockData/StockList";
 import StockForm from './StockData/StockForm';
 import SearchForm from "./SearchForm";
@@ -21,7 +21,8 @@ function App() {
     })  
   }, [])
 
-  const addStock = (stock) => {
+  // This is the local (client-side) update
+  const addStockClientSide = (stock) => {
     const buyStock = stock.map(shares => shares);
     buyStock.push(stock);
     setPortfolio(buyStock);
@@ -62,13 +63,27 @@ function App() {
     console.log("load more");
   };
 
-  const onStockSelected = (symbol="mine", name="me", price="0") => {
-    console.log("hello from stock!!!" + name);
+  const onStockSelected = (symbol, name, price) => {
     setSymbol(symbol);
     setName(name);
     setPrice(price);
-    
   }
+
+  const onPurchase = (symbol, name, price, volume) => {
+
+    // Create object to hold purchase details
+    const purchaseObject = 
+                        "{ symbol: " + symbol + ", " +
+                        "name: " + name + ", " +
+                        "price: " + price + ", " +
+                        "volume: " + volume + ", " +
+                        "userId: " + "123456 }";
+    
+    // Update portfolio with new shares
+    addStock(purchaseObject);
+
+  }
+
 
   return (
     <>
@@ -78,7 +93,7 @@ function App() {
     <div>
     <SearchForm searchStock={findStocks} />
     <br></br>
-    <StockForm symbol={symbol} name={name} price={price}/>
+    <StockForm symbol={symbol} name={name} price={price} onPurchase={onPurchase} />
     <h4>Current Market Trends</h4>
     <ScrollView className="scrollview-data" onEndReached={handleEndReached}>
         <StockList onStockSelected={onStockSelected}/>

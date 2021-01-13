@@ -18,7 +18,6 @@ const createRouter = function (collection) {
   //This is the MongoDB
 
     router.get('/:userId', (req, res) => {
-      console.log("Test")
       const userId = req.params.userId;
       collection
       .find({userId: userId})
