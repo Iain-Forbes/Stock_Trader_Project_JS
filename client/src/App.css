@@ -37,10 +37,13 @@ body {
   margin-right:auto;
 }
 
-.index-data-area:hover {
-  text-decoration: underline;
+.index-row:hover {
+  background-color: honeydew;
+  border-radius: 5px;
   color: #1515cc;
 }
+
+
 .index-data-area > .price {
   text-align: right;
 }

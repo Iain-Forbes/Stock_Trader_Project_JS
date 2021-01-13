@@ -6,7 +6,7 @@ const Stock = ({symbol, name, price, change}) =>{
     }
     
     return(
-        <tr key={symbol} onClick={handleClick}>
+        <tr key={symbol} className="index-row" onClick={handleClick}>
             <td>{symbol}</td> 
             <td>{name}</td> 
             <td>{price}</td> 
