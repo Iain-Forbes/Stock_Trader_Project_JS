@@ -9,6 +9,10 @@ import { ScrollView } from "@cantonjs/react-scroll-view";
 
 function App() {
   const [stocks, setPortfolio] = useState([]);
+  const [symbol, setSymbol] = useState("");
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+
 
   useEffect(() => {
     getPortfolio()
@@ -28,7 +32,7 @@ function App() {
     // list so that it can be sent back 
 
     /*
-    StockService.getSearchStock(code)
+    PortfolioService.getSearchStock(code)
     .then(set search result form data)
     */
     
@@ -60,20 +64,22 @@ function App() {
 
   const onStockSelected = (symbol="mine", name="me", price="0") => {
     console.log("hello from stock!!!" + name);
-    return StockForm(symbol, name, price);
+    setSymbol(symbol);
+    setName(name);
+    setPrice(price);
     
   }
 
   return (
     <>
     <header>
-      <h1></h1>
+      <h3>NIK Ltd    Live Market     My Portfolio</h3>
     </header>
     <div>
-    <h1> NIK Stocks </h1>
     <SearchForm searchStock={findStocks} />
-    <StockForm />
-      <h4>Top 10?</h4>
+    <br></br>
+    <StockForm symbol={symbol} name={name} price={price}/>
+    <h4>Current Market Trends</h4>
     <ScrollView className="scrollview-data" onEndReached={handleEndReached} style={{ height: '50vh' }}>
         <StockList onStockSelected={onStockSelected}/>
       </ScrollView>

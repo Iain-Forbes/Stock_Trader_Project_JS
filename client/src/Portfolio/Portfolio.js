@@ -13,10 +13,6 @@ const Portfolio = ({stock, addStock}) => {
     // }
 
     return (
-        //An HTML table has two kinds of cells:
-        // Header cells - contains header information (created with the <th> element)
-        // Data cells - contains data (created with the <td> element)
-        //<th scope="col|row|colgroup|rowgroup">
         <> 
         <table id="portfolioData" >
             <tr>
