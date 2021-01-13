@@ -96,6 +96,7 @@ function App() {
     
     <SearchForm searchStock={findStocks} />
     <br></br>
+    <p className="form-heading">Add To Your Portfolio Now ↘️</p>
     <StockForm symbol={symbol} name={name} price={price} onPurchase={onPurchase} />
     <h3> Latest Market Trends</h3>
     <ScrollView className="scrollview-data">

@@ -41,7 +41,7 @@ body {
   margin: 15px;
   padding: 20px;
   width: 400px;
-  height: 100px;
+  height: 80px;
   font-size: 0.9em;
   color: #51bacc;
 }
@@ -61,6 +61,9 @@ h2 {
 border: 1px solid #1583cc ;
 }
 
+.form-heading {
+  margin: 30px;
+}
 .index-data-area{
   background-color: rgb(153, 206, 241);
   width: 80%;
