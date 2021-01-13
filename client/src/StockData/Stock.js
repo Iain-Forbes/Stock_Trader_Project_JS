@@ -2,6 +2,7 @@ const Stock = ({symbol, name, price, change, onStockSelected}) =>{
     
     const handleClick = () => {
         onStockSelected(symbol, name, price);   
+        console.log(symbol)
     }
     
     return(

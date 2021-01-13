@@ -11,12 +11,12 @@ const StockForm = ({symbol, name, price, onPurchase}) =>{
     const handleSubmit = (ev) => {
         ev.preventDefault();
         const stockObject = onPurchase(symbol, name, price, volume);
-        console.log("in sub: " + stockObject)
-        console.log(ev.target)
-        addStock(stockObject)   
+        addStock(stockObject)
+        
     }
     
     return(
+       
 
         <form onSubmit={handleSubmit}>
 
@@ -46,6 +46,7 @@ const StockForm = ({symbol, name, price, onPurchase}) =>{
             />
 
         </form>
+        
     )};
     
 export default StockForm; 

@@ -1,4 +1,4 @@
-import {addStock} from "../Services/PortfolioService";
+import {stock} from "../Services/PortfolioService";
 
 const Portfolio = ({stock}) => {
         
@@ -7,8 +7,8 @@ const Portfolio = ({stock}) => {
         <> 
         <table id="portfolioData" >
             <tr>
-                <th>Symbol/Code:</th>
-                <td>{stock.code}</td>
+                <th>Symbol:</th>
+                <td>{stock.symbol}</td>
             </tr>
             <tr>
                 <th>Name:</th>
@@ -19,8 +19,8 @@ const Portfolio = ({stock}) => {
                 <td>{stock.price}</td>
             </tr>
             <tr>
-                <th>Change:</th>
-                <td>{stock.change}</td>
+                <th>Volume:</th>
+                <td>{stock.volume}</td>
             </tr>
         </table>
         <div>
