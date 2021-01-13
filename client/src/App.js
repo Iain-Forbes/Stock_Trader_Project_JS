@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import {getPortfolio} from "./Services/PortfolioService";
 import StockList from "./StockData/StockList";
+import StockForm from './StockData/StockForm';
 import SearchForm from "./SearchForm";
 import './App.css'; 
 import { ScrollView } from "@cantonjs/react-scroll-view";
@@ -57,8 +58,10 @@ function App() {
     console.log("load more");
   };
 
-  const onStockSelected = (symbol, name, price) => {
-    console.log("hello from stock!!!");
+  const onStockSelected = (symbol="mine", name="me", price="0") => {
+    console.log("hello from stock!!!" + name);
+    return StockForm(symbol, name, price);
+    
   }
 
   return (
@@ -69,6 +72,7 @@ function App() {
     <div>
     <h1> NIK Stocks </h1>
     <SearchForm searchStock={findStocks} />
+    <StockForm />
       <h4>Top 10?</h4>
     <ScrollView className="scrollview-data" onEndReached={handleEndReached} style={{ height: '50vh' }}>
         <StockList onStockSelected={onStockSelected}/>
