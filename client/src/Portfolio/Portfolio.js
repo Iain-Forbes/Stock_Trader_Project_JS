@@ -1,13 +1,14 @@
+import {stock} from "../Services/PortfolioService";
 
 const Portfolio = ({stock}) => {
-    console.log(stock);
+        
 
     return (
         <> 
         <table id="portfolioData" >
             <tr>
                 <th>Symbol:</th>
-                <td>{stock.code}</td>
+                <td>{stock.symbol}</td>
             </tr>
             <tr>
                 <th>Name:</th>
@@ -18,7 +19,7 @@ const Portfolio = ({stock}) => {
                 <td>{stock.price}</td>
             </tr>
             <tr>
-                <th>Number of Shares:</th>
+                <th>Volume:</th>
                 <td>{stock.volume}</td>
             </tr>
 

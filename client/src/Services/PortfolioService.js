@@ -10,20 +10,7 @@ export const getUserPortfolio = (userId) => {
     .then(res => res.json())
 }
 
-// Ask server to return details for a single stock - non-historical 
-// data - this will be a request from the search form. Not sure if
-// I need to specify a 'GET', or whether that is automatically assumed.
-//
-// export const getSearchStock = (id) => {
-//     return fetch(baseURL + id, {
-//         // method: 'GET'
-//     })
-//     .then(res => res.json())
-// }
-
 export const addStock = (stock) => {
-    
-    console.log("I am being called to add to the portfolio!!!")
 
     return fetch(baseURL, {
         method: 'POST', 
