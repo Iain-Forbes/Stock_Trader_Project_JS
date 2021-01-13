@@ -1,7 +1,7 @@
 import Stock from './Portfolio.js';
 
-const StockList = ({stocks}) => {
-    const stockInfo = stocks.map(stock => {
+const PortfolioList = ({stocks}) => {
+    const portfolioInfo = stocks.map(stock => {
         return (
         <Stock 
         key = {stock._id}
@@ -10,10 +10,10 @@ const StockList = ({stocks}) => {
 
     return (
         <>
-        {stockInfo}
+        {portfolioInfo}
         </>
     );
 }
 
 
-export default StockList;
+export default PortfolioList;
