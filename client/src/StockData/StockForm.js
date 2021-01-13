@@ -2,6 +2,8 @@ import React from 'react';
 
 const StockForm = (symbol, name, price) =>{
 
+    console.log("in stockform: " + name)
+
     return(
         <form>
 
