@@ -16,6 +16,17 @@ const createRouter = function (collection) {
   const router = express.Router();
 
   //This is the MongoDB
+  router.get('/', (req, res) => {
+    collection
+    .find()
+    .toArray()
+    .then((doc) => res.json(doc))
+    .catch((err) => {
+      console.error(err);
+      res.status(500);
+      res.json({ status: 500, error: err });
+    });
+  });
 
     router.get('/:userId', (req, res) => {
       const userId = req.params.userId;

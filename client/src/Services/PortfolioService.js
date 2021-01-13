@@ -1,7 +1,11 @@
 const baseURL = 'http://localhost:3000/api/positions/';
 
+export const getPortfolio = () => {
+    return fetch(baseURL)
+    .then(res => res.json())
+}
 
-export const getPortfolio = (userId) => {
+export const getUserPortfolio = (userId) => {
     return fetch(baseURL + userId)
     .then(res => res.json())
 }

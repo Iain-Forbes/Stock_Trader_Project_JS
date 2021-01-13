@@ -1,10 +1,11 @@
 import {useState, useEffect} from "react";
-import {getPortfolio, addStock} from "./Services/PortfolioService";
+import {getPortfolio} from "./Services/PortfolioService";
 import StockList from "./StockData/StockList";
 import StockForm from './StockData/StockForm';
 import SearchForm from "./SearchForm";
 import './App.css'; 
 import { ScrollView } from "@cantonjs/react-scroll-view";
+import PortfolioList from "./Portfolio/PortfolioList";
 
 
 function App() {
@@ -15,14 +16,15 @@ function App() {
 
 
   useEffect(() => {
-    getPortfolio()
-    .then((allStocks) => {
-      setPortfolio(allStocks);
+    getPortfolio("123456")
+    .then((stocks) => {
+      setPortfolio(stocks);
     })  
+    console.log(stocks)
   }, [])
 
   // This is the local (client-side) update
-  const addStockClientSide = (stock) => {
+  const addStock = (stock) => {
     const buyStock = stock.map(shares => shares);
     buyStock.push(stock);
     setPortfolio(buyStock);
@@ -100,6 +102,7 @@ function App() {
         <StockList onStockSelected={onStockSelected}/>
       </ScrollView>
       </div>
+      <PortfolioList stocks = {stocks}/>
       </>
   );
 }
