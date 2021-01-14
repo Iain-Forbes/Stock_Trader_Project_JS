@@ -17,5 +17,9 @@ node_modules
 .env.production.local
 npm-debug.log*
 yarn-debug.log*
+<<<<<<< HEAD
 yarn-error.log*
 client/.eslintcache
+=======
+yarn-error.log*
+>>>>>>> a57d87ad280efe61ba379fc1da1a9f2fb9974a79
