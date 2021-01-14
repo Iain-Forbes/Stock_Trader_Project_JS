@@ -92,11 +92,8 @@ function App() {
 
   }
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 6af304ffd7e66370e02f39eab8221f91a6e74ced
   return (
     <>
     <header>
