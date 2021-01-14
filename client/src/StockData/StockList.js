@@ -37,12 +37,16 @@ const StockList = ({onStockSelected}) => {
   }, [])
    
     useEffect(() => {
-      getStockSymbol("IBM")
+      getStockSymbol("MSFT")
       .then((allSymbolData) => {
-        const values = Object.values(allSymbolData["Time Series (Daily)"])
-        console.log(values[0]["2. high"])
+        const values = Object.values(allSymbolData["Time Series (Daily)"]).forEach(function (date) {
+          Object.entries(date).forEach(function([period, value]) {
+            console.log(period, value);
+          })
+        })
+  
       });
-      
+
     }, [])
     
     return(
