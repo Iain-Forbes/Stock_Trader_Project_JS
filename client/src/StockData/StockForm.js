@@ -12,8 +12,9 @@ const StockForm = ({symbol, name, price, onPurchase}) =>{
         ev.preventDefault();
         const stockObject = onPurchase(symbol, name, price, volume);
         addStock(stockObject)
+        .then(() => window.location.reload()
         
-    }
+        )}
     
     return(
        

@@ -6,6 +6,7 @@ import SearchForm from "./SearchForm";
 import './App.css'; 
 import { ScrollView } from "@cantonjs/react-scroll-view";
 import PortfolioList from "./Portfolio/PortfolioList";
+import {deleteStock as apiDeleteStock} from "./Services/PortfolioService";
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
 
 
   useEffect(() => {
-    getPortfolio("123456")
+    getPortfolio()
     .then((stocks) => {
       setPortfolio(stocks);
     })  
@@ -25,7 +26,7 @@ function App() {
 
   // This is the local (client-side) update
   const addStock = (stock) => {
-    const buyStock = stock.map(shares => shares);
+    const buyStock = stock.map(s => s);
     buyStock.push(stock);
     setPortfolio(buyStock);
   }
@@ -44,22 +45,29 @@ function App() {
 
   const updateStock = updatedStock => {
     //update in DB 
-    updateStock(updatedStock);
-    //update locally
-    const updatedStocksIndex = stocks.findIndex(stock => stock._id === updatedStock._id);
+    updateStock(updatedStock).then(() =>{
+  
+    const updatedStocksIndex = stocks.findIndex(s => s._id === updatedStock._id);
+
     const updatedStocks = [...stocks];
     updatedStocks[updatedStocksIndex] = updatedStocks;
+    
     setPortfolio(updatedStocks);
+  })
   };
 
   const deleteStock = (id) => {
-    const removeStock = stocks.map(shares => shares);
-    const stockToDelete = removeStock.map(shares => shares._id).indexOf(id);
-    console.log(stockToDelete);
 
-    removeStock.splice(stockToDelete, 1);
-    setPortfolio(removeStock);
-  };
+    apiDeleteStock(id).then(() =>{
+      const removeStock = stocks.map(s => s);
+
+      const stockToDelete = removeStock.map(s => s._id).indexOf(id);
+
+      removeStock.splice(stockToDelete, 1);
+
+      setPortfolio(removeStock);
+    })
+}
 
   const onStockSelected = (symbol, name, price) => {
     setSymbol(symbol);
@@ -101,13 +109,13 @@ function App() {
     <h3> Latest Market Trends</h3>
     <ScrollView className="scrollview-data">
         <StockList onStockSelected={onStockSelected}/>
-      </ScrollView>
+    </ScrollView>
     
       <br></br>
       <div idName="portfolio-heading" ><h3>Client Portfolio</h3></div>
       
       <br></br>
-      <PortfolioList className="portfolio-table" stocks = {stocks}/>
+      <PortfolioList className="portfolio-table" stocks={stocks} deleteStock={deleteStock}/>
 
       <br></br>
       <footer>

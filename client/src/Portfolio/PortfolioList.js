@@ -1,3 +1,4 @@
+import {stock, deleteStock} from "../Services/PortfolioService";
 import Portfolio from './Portfolio.js';
 
 const PortfolioList = ({stocks}) => {
@@ -5,7 +6,10 @@ const PortfolioList = ({stocks}) => {
         return (
         <Portfolio 
         key = {stock._id}
-        stock ={stock} />)
+        stock ={stock} 
+        deleteStock={deleteStock}
+        />)
+
     });
 
     return (

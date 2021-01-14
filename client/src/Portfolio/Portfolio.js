@@ -1,4 +1,5 @@
-import {stock} from "../Services/PortfolioService";
+import {stock, deleteStock} from "../Services/PortfolioService";
+import {redirect} from 'react'
 
 const Portfolio = ({stock}) => {
         
@@ -17,6 +18,8 @@ const Portfolio = ({stock}) => {
                 <td>{stock.name}</td>
                 <td>{stock.price}</td>
                 <td>{stock.volume}</td>
+                
+                <button onClick={()=>deleteStock(stock._id).then(() => window.location.reload() )}> 🗑 </button>
             </tr>
             
             {/* <tr>
