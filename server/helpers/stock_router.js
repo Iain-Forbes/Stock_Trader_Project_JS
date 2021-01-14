@@ -26,9 +26,8 @@ const createStockRouter = function () {
     }, [])
 
 
-    stockRouter.get('/company/:symbol', (req, res ) =>{
-    const symbol = req.params.symbol
-    const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symbol}&apikey=demo`; 
+    stockRouter.get('/company/msft', (req, res ) =>{
+    const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=msft&apikey=demo`; 
   
     fetch(url)
       .then(jsonData => jsonData.json())

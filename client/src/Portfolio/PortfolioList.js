@@ -3,14 +3,19 @@ import Portfolio from './Portfolio.js';
 
 const PortfolioList = ({stocks}) => {
     let portfolioTotal = 0
-
+    // function to check if string is a float
+    const isFloat = (x) => { return !!(x % 1); }
     const portfolioInfo = stocks.map(stock => {
-        portfolioTotal += stock.price;
-
+        // convert price to numeric
+        const price = parseFloat(stock.price);
+        if (isFloat(price)) {
+            // Accumulated total
+            portfolioTotal += price * parseInt(stock.volume);
+        }
         return (
-        <Portfolio 
+        <Portfolio
         key = {stock._id}
-        stock ={stock} 
+        stock ={stock}
         deleteStock={deleteStock}
         />
         )

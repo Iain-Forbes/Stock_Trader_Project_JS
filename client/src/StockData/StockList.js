@@ -37,7 +37,7 @@ const StockList = ({onStockSelected}) => {
   }, [])
    
     useEffect(() => {
-      getStockSymbol("IBM")
+      getStockSymbol()
       .then((allSymbolData) => {
         const values = Object.values(allSymbolData["Time Series (Daily)"])
         console.log(values[0]["2. high"])
