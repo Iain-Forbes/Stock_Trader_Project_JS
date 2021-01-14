@@ -92,6 +92,11 @@ function App() {
 
   }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 6af304ffd7e66370e02f39eab8221f91a6e74ced
   return (
     <>
     <header>
@@ -123,7 +128,7 @@ function App() {
 
       <br></br>
       <footer>
-        <hr></hr>
+        <hr className="footer-hr"></hr>
         <div className="reviews">
           <h5>What our clients say 💬
             <br></br>
