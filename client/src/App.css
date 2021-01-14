@@ -94,7 +94,7 @@ border: 1px solid #1daec7 ;
   border-collapse: collapse;
   border-radius: 5px;
   width: 90%;
-  height: 35vh;
+  height: 40vh;
   align-content: center;
   margin-top: 20px;
   margin-left:auto; 
@@ -265,8 +265,9 @@ input[type="submit"] {
 .bottom-logo {
   color: #b6e7f0;
   background-color: #51bacc;
-  margin-left: 420px;
-  margin-right: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
   padding: 10px;
   border-radius: 30px 30px 30px;
   width:8%;
