@@ -40,8 +40,8 @@ const StockList = ({onStockSelected}) => {
       getStockSymbol("MSFT")
       .then((allSymbolData) => {
         const values = Object.values(allSymbolData["Time Series (Daily)"]).forEach(function (date) {
-          Object.entries(date).forEach(function([period, value]) {
-            console.log(period, value);
+          Object.entries(date).forEach(function([...date]) {
+            console.log(date);
           })
         })
   
