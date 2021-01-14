@@ -10,7 +10,7 @@ const chartConfig = {
   data: {
     labels: ["2021-01-13", "2021-01-12", "2021-01-11"],
     datasets: [{
-    label: "Shares",
+    label: "MSFT Closing Share Values",
     data: [216.3400, 214.9300, 217.4900],
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
