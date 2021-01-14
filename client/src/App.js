@@ -92,11 +92,6 @@ function App() {
 
   }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 29a5c42f617074faef41dbe4047a42312155a3d0
   return (
     <>
     <header>
@@ -110,9 +105,11 @@ function App() {
     
     <SearchForm searchStock={findStocks} />
     <br></br>
+    <div className="stockinfo ">
+    <StockForm symbol={symbol} name={name} price={price} onPurchase={onPurchase} />
     <Chart/>
     <p className="form-heading">Add To Your Portfolio Now ↘️</p>
-    <StockForm symbol={symbol} name={name} price={price} onPurchase={onPurchase} />
+    </div>
     <h3> Latest Market Trends</h3>
     <ScrollView className="scrollview-data">
         <StockList onStockSelected={onStockSelected}/>

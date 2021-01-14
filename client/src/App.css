@@ -241,6 +241,11 @@ input[type="submit"] {
   font-size: 1.2em;
 }
 
+.stockinfo {
+  display: flex;
+  flex-flow: row;
+}
+
 
 @keyframes App-logo-spin {
   from {
