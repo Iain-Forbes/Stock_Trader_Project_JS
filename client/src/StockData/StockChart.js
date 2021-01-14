@@ -1,14 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
 import Chartjs from "chart.js";
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 
 const chartConfig = {
+
   type: "line",
+  plugins: [ChartDataLabels],
   data: {
-    labels: ["0d", "10d", "20d", "30d", "40d", "50d", "60d"],
+    labels: [],
     datasets: [{
     label: "Shares",
-    data: {url: 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo&datatype=csv'},
+    data: {url: 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=demo'},
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
@@ -59,6 +62,7 @@ const Chart = () => {
   };
 
   return (
+
     <div>
       <canvas ref={chartContainer} />
     </div>
