@@ -1,4 +1,6 @@
 import {useState, useEffect} from "react";
+import Chart from './StockData/StockChart'
+import {chartInstance} from './StockData/StockChart'
 import {getPortfolio} from "./Services/PortfolioService";
 import StockList from "./StockData/StockList";
 import StockForm from './StockData/StockForm';
@@ -51,7 +53,7 @@ function App() {
 
     const updatedStocks = [...stocks];
     updatedStocks[updatedStocksIndex] = updatedStocks;
-    
+
     setPortfolio(updatedStocks);
   })
   };
@@ -90,6 +92,8 @@ function App() {
 
   }
 
+
+
   return (
     <>
     <header>
@@ -103,7 +107,8 @@ function App() {
     
     <SearchForm searchStock={findStocks} />
     <br></br>
-    <h6 className="form-heading">Add To Your Portfolio Now ↘️</h6>
+    <Chart/>
+    <p className="form-heading">Add To Your Portfolio Now ↘️</p>
     <StockForm symbol={symbol} name={name} price={price} onPurchase={onPurchase} />
     <h3> Latest Market Trends</h3>
     <ScrollView className="scrollview-data">
