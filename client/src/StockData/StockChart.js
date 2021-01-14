@@ -8,10 +8,10 @@ const chartConfig = {
   type: "line",
   plugins: [ChartDataLabels],
   data: {
-    labels: [],
+    labels: ["2021-01-13", "2021-01-12", "2021-01-11"],
     datasets: [{
-    label: "Shares",
-    data: {url: 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=demo'},
+    label: "MSFT Closing Share Values",
+    data: [216.3400, 214.9300, 217.4900],
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
