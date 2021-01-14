@@ -13,9 +13,9 @@
   }
 }
 body {
-  background-color: rgb(251, 253, 255);
+  background-color: rgb(244, 248, 250);
   border: 3px solid #1daec7;
-  margin: 5px;
+  margin: 15px;
 }
 
 .header {
@@ -25,36 +25,37 @@ body {
   font-size: 20px;
   color: #1583cc;
 }
+
 .reviews {
   margin: 20px;
   text-align: center;
 }
 
-.advertisment {
-  /* display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: center; */
-  
-  background-color: powderblue;
-  border-radius: 15px;
-  margin: 15px;
-  padding: 20px;
-  width: 400px;
-  height: 80px;
-  font-size: 0.9em;
+.grid-item {
+  font-size: 22px;
+  border-radius: 20px; 
   color: #51bacc;
+  justify-self: center;
+}
+#logo {
+  background-color: powderblue;
 }
 
 h3 {
   text-align: center;
-  color: #1583cc;
+  color: #0ca5c1;
 }
 
-h2 {
-  color: #1a8dda;
-  margin: 30px;
+.grid-items {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-column-gap: 5%;
+  grid-row-gap: 50px ;
+  padding: 3.75%;
+  color: #70b7e6;
+  padding: 20px;
+  border-radius: 30px 30px 30px;
+  
 }
 .header-hr {
   border: 1px solid #1daec7;
@@ -64,9 +65,9 @@ border: 1px solid #1daec7 ;
 }
 
 .form-heading {
-  margin: 30px;
-  color: #1583cc;
-  font-size: 16px;
+  margin: 20px;
+  color: #0ca5c1;
+  font-size: 20px;
 }
 .index-data-area{
   /* background-color: rgb(153, 206, 241); */
@@ -113,7 +114,7 @@ padding: 5px 5px;
   display: flex;
   width: 75%;
   flex-direction: column;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items:center;
   border-radius: 5px;
@@ -162,6 +163,13 @@ td {
   margin: 25px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;;
   font-size: 0.9em;
+}
+
+.chart{
+  flex-grow: 2;
+  flex-basis: 50%;
+  align-self: flex-end;
+  width: 50%;
 }
 
 input[type="text"],
@@ -248,8 +256,22 @@ input[type="submit"] {
 }
 
 .stockinfo {
-  display: flex;
-  flex-flow: row;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-row-gap: 5px ;
+  margin-right: 30px;
+}
+
+.bottom-logo {
+  color: #b6e7f0;
+  background-color: #51bacc;
+  margin-left: 420px;
+  margin-right: 150px;
+  padding: 10px;
+  border-radius: 30px 30px 30px;
+  width:8%;
+  text-align: center;
+  font-size: 23px;
 }
 
 

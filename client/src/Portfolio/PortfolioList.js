@@ -16,9 +16,6 @@ const PortfolioList = ({stocks}) => {
 
     const portfolioInfo = stocks.map(stock => {
 
-
-
-
         // convert price to numeric
         // const price = parseFloat(stock.price);
 

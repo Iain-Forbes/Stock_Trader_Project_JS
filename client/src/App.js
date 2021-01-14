@@ -96,20 +96,18 @@ function App() {
   return (
     <>
     <header>
-      <h2>NIK Ltd</h2>
-      <section className="advertisment">
-        <h2>Buy Stocks Online Today</h2>
-        <h3>Start Building your Portfolio </h3>
-      </section>
+      <div className = "grid-items">
+      <h2 className="grid-item">NIK Ltd</h2>
+      <h1 className="grid-item">Buy Stocks Online Today <br></br>Start Building Your Portfolio</h1>
+      </div>
     </header>
     <hr className="header-hr"></hr>
     <SearchForm searchStock={findStocks} />
     <br></br>
-    <h6 className="form-heading">Add To Your Portfolio Now ↘️</h6>
+    <h4 className="form-heading">Add To Your Portfolio Now ↘️</h4>
     <div className="stockinfo ">
     <StockForm symbol={symbol} name={name} price={price} onPurchase={onPurchase} />
-    <Chart className=""/>
-    
+    <Chart className="chart"/>
     </div>
     <h3> Latest Market Trends</h3>
     <ScrollView className="scrollview-data">
@@ -131,6 +129,7 @@ function App() {
               ❝Simple to use. Helpful information about different types of investment, easy to understand even if you don't know anything about investing❞</h5>
         </div>
       </footer>
+      <h1 className="bottom-logo">NIK Ltd</h1>
       </>
   );
 }
