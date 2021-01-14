@@ -18,8 +18,7 @@ const Portfolio = ({stock}) => {
                 <td>{stock.name}</td>
                 <td>{stock.price}</td>
                 <td>{stock.volume}</td>
-         
-                <button className="delete-button" onClick={()=>deleteStock(stock._id).then(() => window.location.reload() )}> $  </button>
+                <td><button className="delete-button" onClick={()=>deleteStock(stock._id).then(() => window.location.reload() )}> $  </button></td>
             </tr>
         </table>
         </>
