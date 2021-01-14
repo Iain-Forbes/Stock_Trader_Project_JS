@@ -14,7 +14,8 @@
 }
 body {
   background-color: rgb(251, 253, 255);
-  border: 3px solid #1583cc;
+  border: 3px solid #1daec7;
+  margin: 5px;
 }
 
 .header {
@@ -53,6 +54,7 @@ h3 {
 
 h2 {
   color: #1a8dda;
+  margin: 30px;
 }
 .header-hr {
   border: 1px solid #1583cc;
@@ -65,7 +67,9 @@ border: 1px solid #1583cc ;
   margin: 30px;
 }
 .index-data-area{
-  background-color: rgb(153, 206, 241);
+  /* background-color: rgb(153, 206, 241); */
+  background-color: powderblue ;
+  border-collapse: collapse;
   width: 80%;
   text-align: left;
   padding: 10px 5px;
@@ -77,19 +81,22 @@ border: 1px solid #1583cc ;
 .index-row:hover {
   background-color: rgb(164, 216, 235);
   border-radius: 5px;
-  color: #5078e6;
+  color: #2aacc9;
 }
 
 .scrollview-data {
   /* background-color: rgb(202, 217, 245); */
-  background-color: rgb(153, 206, 241);
-  border:2px solid  rgb(98, 133, 220);
+  background-color: powderblue;
+  border:2px solid  powderblue;
+  border-collapse: collapse;
   border-radius: 5px;
   width: 90%;
   height: 35vh;
   align-content: center;
+  margin-top: 20px;
   margin-left:auto; 
   margin-right:auto;
+  padding: 20px;
 }
 
 .portfolio-table {
@@ -98,26 +105,42 @@ padding: 5px 5px;
 }
 
 .portfolio-data {
-  background-color: rgb(169, 214, 244);
-  border:2px solid  rgb(98, 133, 220);
-  /* background-color: rgb(202, 217, 245);
-  border:2px solid  rgb(81, 117, 208); */
-  display: block;
+  background-color: powderblue;
+  border:2px solid  rgb(157, 214, 221);
+  border-collapse: collapse;
+  display: flex;
   width: 75%;
   flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: flex-end;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items:center;
   border-radius: 5px;
-  align-content: center;
+  align-content: space-between;
   margin-left:auto; 
   margin-right:auto;
+  padding: 10px;
 }
 
 .portfolio-data:hover {
   background-color: rgb(179, 218, 244);
   border-radius: 5px;
   color: #5078e6;
+}
+th {
+  background-color: #7ac6d3;
+  color: black;
+}
+
+th,
+td {
+    width: 150px;
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+}
+#portfolioData {
+  background-color: aliceblue;
+  width: auto;
 }
 
 .stock-form {
@@ -216,11 +239,6 @@ input[type="submit"] {
   margin-left: 10px;
   color: white;
   font-size: 1.2em;
-}
-
-#portfolioData {
-  background-color: aliceblue;
-  width: auto;
 }
 
 
