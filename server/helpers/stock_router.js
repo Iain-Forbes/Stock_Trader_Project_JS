@@ -26,8 +26,13 @@ const createStockRouter = function () {
     }, [])
 
 
+<<<<<<< HEAD
     stockRouter.get('/company/MSFT', (req, res ) =>{
     const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=MSFT&apikey=demo`; 
+=======
+    stockRouter.get('/company/msft', (req, res ) =>{
+    const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=msft&apikey=demo`; 
+>>>>>>> d1a260f54449377d824e0b1f6f1e9a028fdd199e
   
     fetch(url)
       .then(jsonData => jsonData.json())
