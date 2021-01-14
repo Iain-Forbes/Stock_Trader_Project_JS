@@ -16,6 +16,7 @@ function App() {
   const [symbol, setSymbol] = useState("");
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
+  const [portfolioTotal, setPortfolioTotal] = useState(0);
 
 
   useEffect(() => {
@@ -121,7 +122,7 @@ function App() {
       <div idName="portfolio-heading" ><h3>Client Portfolio</h3></div>
       
       <br></br>
-      <PortfolioList className="portfolio-table" stocks={stocks} deleteStock={deleteStock}/>
+      <PortfolioList className="portfolio-table" stocks={stocks} deleteStock={deleteStock} portfolioTotal ={portfolioTotal}/>
 
       <br></br>
       <footer>
