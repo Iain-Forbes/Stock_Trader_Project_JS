@@ -22,4 +22,8 @@ yarn-error.log*
 client/.eslintcache
 =======
 yarn-error.log*
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> a57d87ad280efe61ba379fc1da1a9f2fb9974a79
+>>>>>>> e4491eacf7de22b6362ea73852015d1ce8ccb1a3

@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import Chartjs from "chart.js";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
-
 const chartConfig = {
 
   type: "line",

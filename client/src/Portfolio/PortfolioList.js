@@ -35,9 +35,9 @@ const PortfolioList = ({stocks}) => {
 
 
         return (
-        <Portfolio 
+        <Portfolio
         key = {stock._id}
-        stock ={stock} 
+        stock ={stock}
         deleteStock={deleteStock}
         />
         )
