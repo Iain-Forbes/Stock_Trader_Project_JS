@@ -1,16 +1,27 @@
 import React, { useEffect, useRef, useState } from "react";
 import Chartjs from "chart.js";
-import ChartDataLabels from 'chartjs-plugin-datalabels';
+import ChartData, {xAxis} from "./getChartData"
+
 
 const chartConfig = {
 
   type: "line",
-  plugins: [ChartDataLabels],
   data: {
-    labels: ["2021-01-13", "2021-01-12", "2021-01-11"],
+    labels: ["2020-12-31", 
+    "2021-01-04", 
+    "2021-01-05",
+    "2021-01-06",
+    "2021-01-07",
+    "2021-01-08",
+    "2021-01-09",
+    "2021-01-10",
+    "2021-01-11",
+    "2021-01-12",
+    "2021-01-13",
+    "2021-01-14"],
     datasets: [{
     label: "MSFT Closing Share Values",
-    data: [216.3400, 214.9300, 217.4900],
+    data: [222.4, 217.6, 217.9, 215.7, 212.2, 218.1, 219.6, 217.4, 214.9, 216.3, 213.02, 240.2 ],
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
