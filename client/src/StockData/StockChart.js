@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Chartjs from "chart.js";
-import ChartData, {xAxis} from "./getChartData"
+
 
 
 const chartConfig = {
