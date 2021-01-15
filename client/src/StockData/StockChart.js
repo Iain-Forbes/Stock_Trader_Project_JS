@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import Chartjs from "chart.js";
+import xAxis from "./StockList"
+import yAxis from "./StockList"
 
+console.log("Here" + xAxis + yAxis)
 
 
 const chartConfig = {

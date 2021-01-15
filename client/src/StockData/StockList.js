@@ -8,9 +8,10 @@ const StockList = ({onStockSelected}) => {
     const [stockIndex, setStockIndex] = useState([]);
     const [symbol, setsymbol] = useState([]);
     
-    const [xAxis, setxAxis] = useState([]);
-    console.log(xAxis)
-    const [yAxis, setyAxis] = useState([]);
+    // const [xAxis, setxAxis] = useState([]);
+    // console.log("This is the" + xAxis)
+    // const [yAxis, setyAxis] = useState([]);
+    // console.log("I'm the chart data" + ": " + yAxis)
 
   
     useEffect(() => {
@@ -48,30 +49,26 @@ const StockList = ({onStockSelected}) => {
 
     getStockSymbol("MSFT")
     .then((allSymbolData) => {
+      let yAxis = []
+      let xAxis = []
       const chartData = Object.values(allSymbolData["Time Series (Daily)"]).forEach(function (date) {
         Promise.all(([date["4. close"]])).then(data  => {
-          setxAxis(data)
+          yAxis.push(data)
         });
 
-        // // // Create x-axis data - using a count increment
-        // setxAxis(count);
-        // setyAxis;
-      
-        
-        // console.log("This is the" + yAxis)
-        // console.log("This is the" + xAxis)
-
-        // // Increment
-        // count += 1;
+        // // Create x-axis data - using a count increment
+          xAxis.push(count);
+    
+        // Increment
+        count += 1;
       })
-
-     
-    });
+      console.log(xAxis)
+      console.log(yAxis)
+    })
   }, []) 
 
   return(
     <>
-
     <table className="index-data-area">
       <tr className="heading" itemScope="rowgroup">
         <th>Symbol</th>
@@ -87,8 +84,5 @@ const StockList = ({onStockSelected}) => {
     )
 }
  
-    
-    
-
 
 export default StockList;
