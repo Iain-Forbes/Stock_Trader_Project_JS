@@ -1,3 +1,3 @@
-# wk8_day4_react_express_mogodb_project
+Stock Trader Project
 
 The installation details will be added here.
